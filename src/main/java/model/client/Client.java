@@ -15,6 +15,8 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 public class Client {
+
+    @CsvBindByName
     private UUID id;
 
     @CsvBindByName

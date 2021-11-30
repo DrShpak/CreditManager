@@ -20,9 +20,8 @@ public class TariffRepoImpl implements TariffRepository {
     }
 
     private List<Tariff> readAll() throws FileNotFoundException {
-        var tariffs = new CsvToBeanBuilder<Tariff>(new FileReader("src/main/resources/tariffs.csv"))
+        //        tariffs.forEach(tariff -> tariff.setId(UUID.randomUUID()));
+        return new CsvToBeanBuilder<Tariff>(new FileReader("src/main/resources/tariffs.csv"))
                 .withType(Tariff.class).build().parse();
-        tariffs.forEach(tariff -> tariff.setId(UUID.randomUUID()));
-        return tariffs;
     }
 }

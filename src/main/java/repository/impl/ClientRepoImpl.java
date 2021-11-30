@@ -20,10 +20,9 @@ public class ClientRepoImpl implements ClientRepository {
     }
 
     private List<Client> readAll() throws FileNotFoundException {
-        var clients = new CsvToBeanBuilder<Client>(new FileReader("src/main/resources/clients.csv"))
-                .withType(Client.class).build().parse();
 
-        clients.forEach(client -> client.setId(UUID.randomUUID()));
-        return clients;
+//        clients.forEach(client -> client.setId(UUID.randomUUID()));
+        return new CsvToBeanBuilder<Client>(new FileReader("src/main/resources/clients.csv"))
+                .withType(Client.class).build().parse();
     }
 }

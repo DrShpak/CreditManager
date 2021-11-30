@@ -13,6 +13,8 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 public class Tariff {
+
+    @CsvBindByName
     private UUID id;
 
     @CsvBindByName

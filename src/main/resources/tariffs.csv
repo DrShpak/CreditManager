@@ -1,3 +1,3 @@
-name,term,amount,interestRate
-lol,10,1000,5
-kek,2,500,2
+id,name,term,amount,interestRate
+ba90b2f7-1fe4-40ac-929c-6d164219498e,lol,10,1000,5
+b3ef0d86-d846-4830-9c4d-bebb23d9adf1,kek,2,500,2
