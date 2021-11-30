@@ -50,7 +50,7 @@ public class CreditServiceImpl implements CreditService {
                 LocalDate.now(),
                 String.valueOf(creditRepository.findAll().size()),
                 clientRepository.findAll().stream().filter(x -> x.getId() == clientId).findAny().get(),
-                tariffRepository.findAll().stream().filter(x -> x.getId() == clientId).findAny().get()
+                tariffRepository.findAll().stream().filter(x -> x.getId() == tariffId).findAny().get()
         );
         creditRepository.add(credit);
         return credit;

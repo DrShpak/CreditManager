@@ -7,6 +7,7 @@ import repository.ClientRepository;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
+import java.util.UUID;
 
 public class ClientRepoImpl implements ClientRepository {
     @Override
@@ -19,7 +20,10 @@ public class ClientRepoImpl implements ClientRepository {
     }
 
     private List<Client> readAll() throws FileNotFoundException {
-        return new CsvToBeanBuilder<Client>(new FileReader(".csv"))
+        var clients = new CsvToBeanBuilder<Client>(new FileReader("src/main/resources/clients.csv"))
                 .withType(Client.class).build().parse();
+
+        clients.forEach(client -> client.setId(UUID.randomUUID()));
+        return clients;
     }
 }

@@ -7,6 +7,7 @@ import repository.TariffRepository;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
+import java.util.UUID;
 
 public class TariffRepoImpl implements TariffRepository {
     @Override
@@ -19,7 +20,9 @@ public class TariffRepoImpl implements TariffRepository {
     }
 
     private List<Tariff> readAll() throws FileNotFoundException {
-        return new CsvToBeanBuilder<Tariff>(new FileReader(".csv"))
+        var tariffs = new CsvToBeanBuilder<Tariff>(new FileReader("src/main/resources/tariffs.csv"))
                 .withType(Tariff.class).build().parse();
+        tariffs.forEach(tariff -> tariff.setId(UUID.randomUUID()));
+        return tariffs;
     }
 }

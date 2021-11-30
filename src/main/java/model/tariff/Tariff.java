@@ -11,8 +11,8 @@ import java.util.UUID;
 @EqualsAndHashCode
 @AllArgsConstructor
 @Builder
+@NoArgsConstructor
 public class Tariff {
-    @CsvBindByName
     private UUID id;
 
     @CsvBindByName

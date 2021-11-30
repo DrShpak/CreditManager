@@ -1,7 +1,6 @@
 import repository.impl.ClientRepoImpl;
 import repository.impl.CreditRepoImpl;
 import repository.impl.TariffRepoImpl;
-import services.CreditService;
 import services.impl.CreditServiceImpl;
 import services.impl.TariffServiceImpl;
 
