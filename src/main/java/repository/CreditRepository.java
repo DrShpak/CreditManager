@@ -5,6 +5,7 @@ import model.credit.Credit;
 import java.util.List;
 
 public interface CreditRepository {
-    public List<Credit> findAll();
-
+    List<Credit> findAll();
+    void add(Credit credit);
+    boolean remove(Credit credit);
 }
