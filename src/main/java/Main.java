@@ -19,23 +19,29 @@ public class Main {
         var scn = new Scanner(System.in);
         while (true)
         {
-            var cmd = scn.nextLine();
-            switch (cmd)
-            {
-                case "GetListTariffs" -> {
-                    for (var fe:
-                         tariffSrv.getListTariffs()) {
-                        System.out.println(fe.toString());
+            try {
+                var cmd = scn.nextLine();
+                switch (cmd)
+                {
+                    case "GetListTariffs" -> {
+                        for (var fe:
+                                tariffSrv.getListTariffs()) {
+                            System.out.println(fe.toString());
+                        }
                     }
+                    case "GetCreditApplication" -> System.out.println(creditSrv.openCredit(UUID.fromString(scn.nextLine()),
+                            UUID.fromString(scn.nextLine())));
+                    case "CloseCredit" -> System.out.println(
+                            creditSrv.closeCredit(UUID.fromString(scn.nextLine()),
+                                    UUID.fromString(scn.nextLine())));
+                    case "GetListActiveCredits" -> System.out.println(
+                            creditSrv.getCreditsByClientId(UUID.fromString(scn.nextLine())));
+                    default -> System.out.println("Unknown command");
                 }
-                case "GetCreditApplication" -> System.out.println(creditSrv.openCredit(UUID.fromString(scn.nextLine()),
-                        UUID.fromString(scn.nextLine())));
-                case "CloseCredit" -> System.out.println(
-                        creditSrv.closeCredit(UUID.fromString(scn.nextLine()),
-                                UUID.fromString(scn.nextLine())));
-                case "GetListActiveCredits" -> System.out.println(
-                        creditSrv.getCreditsByClientId(UUID.fromString(scn.nextLine())));
-                default -> System.out.println("Unknown command");
+            }
+            catch (Exception ex)
+            {
+                ex.printStackTrace();
             }
         }
     }

@@ -27,7 +27,7 @@ public class CreditServiceImpl implements CreditService {
         return creditRepository.
                 findAll().
                 stream().
-                filter(x -> x.getClient().getId() == id).
+                filter(x -> x.getClient().getId().equals(id)).
                 collect(Collectors.toList());
     }
 
@@ -36,7 +36,7 @@ public class CreditServiceImpl implements CreditService {
         var credit = creditRepository.
                 findAll().
                 stream().
-                filter(x -> x.getId() == creditId).
+                filter(x -> x.getId().equals(creditId)).
                 findFirst().
                 get();
         creditRepository.remove(credit);
@@ -49,8 +49,8 @@ public class CreditServiceImpl implements CreditService {
                 UUID.randomUUID(),
                 LocalDate.now(),
                 String.valueOf(creditRepository.findAll().size()),
-                clientRepository.findAll().stream().filter(x -> x.getId() == clientId).findAny().get(),
-                tariffRepository.findAll().stream().filter(x -> x.getId() == tariffId).findAny().get()
+                clientRepository.findAll().stream().filter(x -> x.getId().equals(clientId)).findAny().get(),
+                tariffRepository.findAll().stream().filter(x -> x.getId().equals(tariffId)).findAny().get()
         );
         creditRepository.add(credit);
         return credit;
