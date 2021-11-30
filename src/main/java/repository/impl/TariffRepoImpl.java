@@ -1,14 +1,14 @@
-package repository;
+package repository.impl;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import model.tariff.Tariff;
+import repository.TariffRepository;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
 
 public class TariffRepoImpl implements TariffRepository {
-
     @Override
     public List<Tariff> findAll() {
         try {

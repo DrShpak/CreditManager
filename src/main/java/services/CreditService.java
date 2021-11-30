@@ -6,10 +6,9 @@ import java.util.List;
 import java.util.UUID;
 
 public interface CreditService {
+    List<Credit> getCreditsByClientId(UUID id);
 
-    public List<Credit> getCreditsByClientId(UUID id);
+    Credit closeCredit(UUID clientId, UUID creditId);
 
-    public String closeCredit(UUID clientId, UUID creditId);
-
-    public String openCredit(UUID clientId, UUID tariffId);
+    Credit openCredit(UUID clientId, UUID tariffId);
 }

@@ -1,5 +1,6 @@
 package services.impl;
 
+import model.tariff.Tariff;
 import repository.TariffRepository;
 import services.TariffService;
 
@@ -11,7 +12,7 @@ public class TariffServiceImpl implements TariffService {
     }
 
     @Override
-    public String getAllTariffs() {
-        return tariffRepo.findAll().toString();
+    public Tariff[] getListTariffs() {
+        return tariffRepo.findAll().toArray(Tariff[]::new);
     }
 }

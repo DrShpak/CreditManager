@@ -1,5 +1,7 @@
 package services;
 
+import model.tariff.Tariff;
+
 public interface TariffService {
-    public String getAllTariffs();
+    Tariff[] getListTariffs();
 }
