@@ -1,13 +1,12 @@
-package repository.impl;
+package neoflex.repository.impl;
 
 import com.opencsv.bean.CsvToBeanBuilder;
-import model.tariff.Tariff;
-import repository.TariffRepository;
+import neoflex.model.tariff.Tariff;
+import neoflex.repository.TariffRepository;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
-import java.util.UUID;
 
 public class TariffRepoImpl implements TariffRepository {
     @Override

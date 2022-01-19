@@ -1,6 +1,6 @@
-package services;
+package neoflex.services;
 
-import model.credit.Credit;
+import neoflex.model.credit.Credit;
 
 import java.util.List;
 import java.util.UUID;

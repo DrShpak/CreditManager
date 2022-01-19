@@ -1,6 +1,6 @@
-package repository;
+package neoflex.repository;
 
-import model.tariff.Tariff;
+import neoflex.model.tariff.Tariff;
 
 import java.util.List;
 
