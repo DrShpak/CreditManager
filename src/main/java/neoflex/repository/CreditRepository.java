@@ -1,6 +1,6 @@
-package repository;
+package neoflex.repository;
 
-import model.credit.Credit;
+import neoflex.model.credit.Credit;
 
 import java.util.List;
 

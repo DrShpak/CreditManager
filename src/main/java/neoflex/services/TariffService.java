@@ -1,6 +1,6 @@
-package services;
+package neoflex.services;
 
-import model.tariff.Tariff;
+import neoflex.model.tariff.Tariff;
 
 public interface TariffService {
     Tariff[] getListTariffs();

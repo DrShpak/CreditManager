@@ -1,13 +1,12 @@
-package repository.impl;
+package neoflex.repository.impl;
 
 import com.opencsv.bean.CsvToBeanBuilder;
-import model.client.Client;
-import repository.ClientRepository;
+import neoflex.model.client.Client;
+import neoflex.repository.ClientRepository;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
-import java.util.UUID;
 
 public class ClientRepoImpl implements ClientRepository {
     @Override

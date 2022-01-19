@@ -1,7 +1,6 @@
-package repository;
+package neoflex.repository;
 
-import model.client.Client;
-import model.credit.Credit;
+import neoflex.model.client.Client;
 
 import java.util.List;
 

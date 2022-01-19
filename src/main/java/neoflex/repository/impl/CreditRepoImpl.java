@@ -1,11 +1,8 @@
-package repository.impl;
+package neoflex.repository.impl;
 
-import com.opencsv.bean.CsvToBeanBuilder;
-import model.credit.Credit;
-import repository.CreditRepository;
+import neoflex.model.credit.Credit;
+import neoflex.repository.CreditRepository;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
